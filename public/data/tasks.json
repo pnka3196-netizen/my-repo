@@ -1,0 +1,29 @@
+[
+  {
+    "id": "t1",
+    "projectId": "p1",
+    "title": "Create wireframes",
+    "status": "Todo",
+    "priority": "High",
+    "assignee": "Alice",
+    "dueDate": "2025-11-01"
+  },
+  {
+    "id": "t2",
+    "projectId": "p1",
+    "title": "Implement header",
+    "status": "In Progress",
+    "priority": "Medium",
+    "assignee": "Eve",
+    "dueDate": "2025-10-28"
+  },
+  {
+    "id": "t3",
+    "projectId": "p2",
+    "title": "Fix crash on login",
+    "status": "Todo",
+    "priority": "High",
+    "assignee": "Bob",
+    "dueDate": "2025-10-31"
+  }
+]
