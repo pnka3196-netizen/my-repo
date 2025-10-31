@@ -1,0 +1,109 @@
+:root {
+  --bg: #0b0f14;
+  --text: #f1f5f9;
+  --card: #121821;
+  --muted: #cbd5e1;
+  --primary: #60a5fa;
+  --focus: #22d3ee;
+}
+.light {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --card: #f8fafc;
+  --muted: #475569;
+  --primary: #2563eb;
+  --focus: #0ea5e9;
+}
+* {
+  box-sizing: border-box;
+}
+body,
+html,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.container {
+  padding: 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin-top: 1rem;
+}
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 8px;
+}
+.btn,
+.btn-toggle {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-toggle {
+  margin-left: 1rem;
+}
+.filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+input,
+select {
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 0.25rem;
+}
+input:focus,
+select:focus,
+button:focus {
+  outline: 3px solid var(--focus);
+}
+.task {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+}
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+.error {
+  color: #ff6666;
+}
