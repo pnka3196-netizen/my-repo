@@ -11,7 +11,7 @@ export default function Home() {
     async function load() {
       try {
         // try multiple locations for projects.json
-        const tryUrls = ["/projects.json", "/data/projects.json"];
+        const tryUrls = ["/projects.json"];
         let res = null;
         for (const u of tryUrls) {
           try {
@@ -37,20 +37,24 @@ export default function Home() {
     };
   }, []);
 
-  if (error) return (
-    <section>
-      <h2>Projects</h2>
-      <p role="alert">Error loading projects: {error}</p>
-      <p><Link to="/projects">Go to Projects page</Link></p>
-    </section>
-  );
+  if (error)
+    return (
+      <section>
+        <h2>Projects</h2>
+        <p role="alert">Error loading projects: {error}</p>
+        <p>
+          <Link to="/projects">Go to Projects page</Link>
+        </p>
+      </section>
+    );
 
-  if (!projects) return (
-    <section>
-      <h2>Projects</h2>
-      <p>Loading projects…</p>
-    </section>
-  );
+  if (!projects)
+    return (
+      <section>
+        <h2>Projects</h2>
+        <p>Loading projects…</p>
+      </section>
+    );
 
   return (
     <section>
@@ -59,12 +63,15 @@ export default function Home() {
       <ul aria-label="projects list">
         {projects.map((p) => (
           <li key={p.id}>
-            <strong>{p.name}</strong> — {p.owner} — <span aria-hidden="true">{p.status}</span>
-            {" "}(<Link to={`/projects/${p.id}`}>Open</Link>)
+            <strong>{p.name}</strong> — {p.owner} —{" "}
+            <span aria-hidden="true">{p.status}</span> (
+            <Link to={`/projects/${p.id}`}>Open</Link>)
           </li>
         ))}
       </ul>
-      <p><Link to="/projects">View all projects</Link></p>
+      <p>
+        <Link to="/projects">View all projects</Link>
+      </p>
     </section>
   );
 }
